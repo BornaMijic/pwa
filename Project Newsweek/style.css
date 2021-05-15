@@ -1,0 +1,380 @@
+*{
+    margin:0;
+    padding:0;
+
+}
+.link{
+    color: inherit;
+}
+.page-wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+ }
+
+#trenutnoVrijeme{
+    position: absolute;
+    left: 20px;
+    bottom: 45px;
+    color:white;
+}
+
+#copyright{
+    font-size: 12px;
+    border-bottom: 1px solid black;
+    
+}
+
+.floatovi{
+    float:left;
+    width:32%;
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+
+.razmakIzmeduSlika{
+    margin-right: 10px;
+}
+.clear{
+    clear: both;
+}
+
+  .image{
+      width: 100%;
+  }
+
+footer{
+    border-top: 1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 25px;
+}
+
+section{
+    
+    padding: 15px;
+}
+
+.crtaIznadArticla{
+    border-top: 1px solid black;
+    padding: 15px 0px;
+}
+
+.flex-container{
+    display:flex;
+    justify-content: center;
+}
+
+.flex-container1{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.forma1{
+    padding:5%;
+    border: 1px solid black;
+    margin-top:10px;
+}
+
+.inputNaslov{
+    width: 100%;
+}
+
+form{
+    line-height: 200%;
+}
+
+nav ul li a:hover{
+    background-color: rgb(255, 185, 185);
+}
+
+textarea{
+    height: 300px;
+    width:300px;
+    resize: none;
+}
+
+.naslovKategorija{
+    color: red;
+    font-weight: bold;
+    padding-top:10px
+}
+
+
+.velicinaKategorije{
+    font-size: 20px;
+}
+
+.velikaSlova{
+    text-transform: uppercase;
+}
+
+.slika{
+    width: 100%;
+}
+
+.razmak{
+    padding: 5px 0px;
+}
+
+.razmak1{
+    padding: 10px 0px 20px 0px;
+}
+
+.prvoSlovo::first-letter {
+    font-size: 150%;
+    font-weight: bold;
+    float: left; 
+    text-transform: uppercase;     
+}
+
+
+@media screen and (min-width: 731px) {
+    .naslovClanka{
+        width: 300px;
+    }
+
+    .nasloviclanaka{
+        word-wrap: break-word;
+        width:100%;
+        display: inline-block;
+    }
+    nav li {
+        display: inline-block;
+        width: 23%;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 10px;
+        
+    }
+    
+    nav a {
+        display: block;
+        color: black;
+        padding: 10px 20px;
+        font-size: 21px;
+    }
+    
+    nav {
+        display:block;
+        padding: 10px 5% 10px 0px;
+        position: relative;
+        bottom: 30px;
+        border-bottom: 1px solid black;
+    }
+    
+    
+    a {
+        text-decoration: none;
+    }
+    
+    ul {
+        list-style-type: none;
+        background-color: white;
+        border-top-right-radius: 250px;
+    }
+    .crtaNav{
+        border-right: 1px solid black;
+    }
+    .bojaNaslovnogDijela{
+        background-color: red;
+        position: relative;
+        padding-bottom: 30px;
+    }
+    
+    .naslov{
+        text-align: center;
+        font-size: 80px;
+        color:white;
+    }
+
+    #boxKategorije{
+        width: 80px;
+        color:white;
+        font-size: 14px;
+        padding: 5px;
+        text-align: center;
+        background-color: red;
+    }
+    
+  }
+
+@media screen and (min-width: 576px) and (max-width: 730px) {
+    .naslovClanka{
+        width: 100%;
+    }
+    textarea{
+        width:100%;
+    }
+    .forma1{
+        padding:5%;
+        border: 1px solid black;
+        margin-top:10px;
+        width:90%;
+        margin-left: 5px;
+        margin-right:5px;
+    }
+    .nasloviclanaka{
+        word-wrap: break-word;
+        width:100%;
+        display: inline-block;
+        font-size: 15px;
+    }
+    nav li {
+        display: inline-block;
+        width: 24%;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 10px;
+        
+    }
+    
+    nav a {
+        display: block;
+        color: black;
+        width:100%;
+        padding: 25px 0px;
+        font-size: 20px;
+    }
+    
+    nav {
+        display:block;
+        position: relative;
+        bottom: 30px; 
+        padding-bottom: 10px;
+        border-bottom: 1px solid black;   
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    ul {
+        list-style-type: none;
+        background-color: white;
+    }
+    .crtaNav{
+        border-right: 1px solid black;
+    }
+    .bojaNaslovnogDijela{
+        background-color: red;
+        position: relative;
+        padding-bottom: 30px;
+    }
+    
+    .naslov{
+        text-align: center;
+        font-size: 80px;
+        color:white;
+    }
+
+    #boxKategorije{
+        width: 50px;
+        color:white;
+        font-size: 12px;
+        padding: 5px;
+        text-align: center;
+        background-color: red;
+    }
+    
+  }
+@media screen and (max-width: 576px) {
+    .naslovClanka{
+        width: 100%;
+    }
+
+    .odabirSlika{
+        word-wrap: break-word;
+        width:100%;
+    }
+    textarea{
+        width:100%;
+    }
+    .floatovi{
+        float:left;
+        width:100%;
+    }
+    
+    .razmakIzmeduSlika{
+        margin-right: 10px;
+    }
+    .clear{
+        clear: both;
+    }
+    
+      .image{
+          width: 100%;
+      }
+    
+    
+    nav li {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;        
+    }
+    
+    nav a {
+        display: block;
+        color: black;
+        padding: 20px 25px;
+        font-size: 25px;
+        word-wrap: break-word;
+    }
+    
+    nav {
+        display:block;
+        position: relative;
+        bottom: 30px;
+      
+    }
+    
+    
+    a {
+        text-decoration: none;
+    }
+    
+    ul {
+        list-style-type: none;
+        background-color: white;
+    }
+    .crtaNav{
+        border-bottom: 1px solid black;
+    }
+    .bojaNaslovnogDijela{
+        background-color: red;
+        position: relative;
+        padding-bottom: 100px;
+    }
+    
+    .naslov{
+        text-align: center;
+        font-size: 40px;
+        color:white;
+    }
+
+    #boxKategorije{
+        width: 40px;
+        color:white;
+        font-size: 10px;
+        padding: 5px;
+        text-align: center;
+        background-color: red;
+    }
+
+    .nasloviclanaka{
+        word-wrap: break-word;
+        width:100%;
+        display: inline-block;
+        font-size: 12px;
+    }
+    .forma1{
+        padding:5%;
+        border: 1px solid black;
+        margin-top:10px;
+        width: 90%;
+        margin-left: 5px;
+        margin-right:5px;
+    }
+}
