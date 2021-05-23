@@ -6,6 +6,25 @@
 .link{
     color: inherit;
 }
+
+.pogreska{
+    color:red;
+    font-size: 10px;
+}
+
+.pogreska1{
+    color:red;
+    font-size: 15px;
+    border: 1px dashed red;
+}
+
+.odjava{
+
+    position: absolute;
+    right: 10px;
+    bottom: 40px;
+}
+
 .page-wrapper{
     max-width: 1200px;
     margin: 0 auto;
@@ -98,7 +117,8 @@ textarea{
 .naslovKategorija{
     color: red;
     font-weight: bold;
-    padding-top:10px
+    padding-top:10px;
+    font-size:20px;
 }
 
 
@@ -123,12 +143,14 @@ textarea{
 }
 
 .prvoSlovo::first-letter {
-    font-size: 150%;
+    font-size: 200%;
     font-weight: bold;
-    float: left; 
     text-transform: uppercase;     
 }
 
+.prvoSlovo{
+    font-size: 18px;
+}
 
 @media screen and (min-width: 731px) {
     .naslovClanka{
@@ -139,10 +161,18 @@ textarea{
         word-wrap: break-word;
         width:100%;
         display: inline-block;
+        font-size: 35px;
+    }
+
+    .nasloviclanaka1{
+        word-wrap: break-word;
+        width:100%;
+        display: inline-block;
+        font-size: 20px;
     }
     nav li {
         display: inline-block;
-        width: 23%;
+        width: 17%;
         text-align: center;
         font-weight: bold;
         padding-top: 10px;
@@ -152,13 +182,13 @@ textarea{
     nav a {
         display: block;
         color: black;
-        padding: 10px 20px;
-        font-size: 21px;
+        padding: 25px 20px 25px 0px;
+        font-size: 17px;
     }
     
     nav {
         display:block;
-        padding: 10px 5% 10px 0px;
+        padding: 10px 10% 10px 0px;
         position: relative;
         bottom: 30px;
         border-bottom: 1px solid black;
@@ -219,11 +249,20 @@ textarea{
         word-wrap: break-word;
         width:100%;
         display: inline-block;
-        font-size: 15px;
+        font-size: 35px;
     }
+
+    .nasloviclanaka1{
+        word-wrap: break-word;
+        width:100%;
+        display: inline-block;
+        font-size: 20px;
+    }
+
+    
     nav li {
         display: inline-block;
-        width: 24%;
+        width: 17%;
         text-align: center;
         font-weight: bold;
         padding-top: 10px;
@@ -235,7 +274,7 @@ textarea{
         color: black;
         width:100%;
         padding: 25px 0px;
-        font-size: 20px;
+        font-size: 14px;
     }
     
     nav {
@@ -285,6 +324,11 @@ textarea{
     }
 
     .odabirSlika{
+        word-wrap: break-word;
+        width:100%;
+    }
+
+    .optionDio{
         word-wrap: break-word;
         width:100%;
     }
@@ -367,7 +411,14 @@ textarea{
         word-wrap: break-word;
         width:100%;
         display: inline-block;
-        font-size: 12px;
+        font-size: 25px;
+    }
+
+    .nasloviclanaka1{
+        word-wrap: break-word;
+        width:100%;
+        display: inline-block;
+        font-size: 16px;
     }
     .forma1{
         padding:5%;

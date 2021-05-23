@@ -12,17 +12,34 @@
             <div class="bojaNaslovnogDijela">
                 <p id="trenutnoVrijeme"><?php echo date('D, M d,Y');?></p>
                 <h1 class="naslov">Newsweek</h1>     
+                <div class="odjava"><?php 
+                session_start();
+                if(isset($_SESSION['$username']) && isset($_SESSION['$level'])){
+                     echo '<form   method="post" action=""><input type="submit" name="odjava" value="odjava"/></form>';
+                } ?></div>  
             </div>
             <nav>
                 <ul>
                     <li><a href="index.php" class="crtaNav" >Home</a></li>
                     <li><a href="kategorija.php?id=U.S" class="crtaNav">U.S</a></li>
                     <li><a href="kategorija.php?id=World" class="crtaNav">World</a></li>
-                    <li><a href="administracija.php" id="crtaNav">Administracija</a></li>
+                    <li><a href="administracija.php" class="crtaNav">Administracija</a></li>
+                    <li><a href="unos.php" id="crtaNav">Unos</a></li>
                   </ul>
             </nav>
         </header>
         <section>
+        <?php
+           
+           if(isset($_POST['odjava'])){
+               unset($_SERVER['$username']);
+               unset($_SERVER['$level']);
+               session_destroy();
+               $location = "/Project Newsweek/administracija.php";
+               header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+               
+           }
+        ?>
         <?php   
                if(isset($_GET['id'])){
                    $kategorija = $_GET['id'];
@@ -41,7 +58,7 @@
                             echo '<a class="link" href="clanak.php?id='.$row['id'].'">'; 
                             echo '<img class="image" src="img/'.$row['slika'] . '"'; 
                             echo '<div>'; 
-                            echo '<h4 class="nasloviclanaka">'; 
+                            echo '<h4 class="nasloviclanaka1">'; 
                             echo $row['naslov']; echo '</h4>'; 
                             echo '</div></a>';
                             echo '</div>';
@@ -51,7 +68,7 @@
                             echo '<a class="link" href="clanak.php?id='.$row['id'].'">'; 
                             echo '<img class="image" src="img/'.$row['slika'] . '"'; 
                             echo '<div>'; 
-                            echo '<h4 class="nasloviclanaka">'; 
+                            echo '<h4 class="nasloviclanaka1">'; 
                             echo $row['naslov']; echo '</h4>'; 
                             echo '</div></a>';
                             echo '</div>';

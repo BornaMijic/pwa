@@ -18,7 +18,8 @@
                     <li><a href="index.php" class="crtaNav" >Home</a></li>
                     <li><a href="kategorija.php?id=U.S" class="crtaNav">U.S</a></li>
                     <li><a href="kategorija.php?id=World" class="crtaNav">World</a></li>
-                    <li><a href="administracija.php" id="crtaNav">Administracija</a></li>
+                    <li><a href="administracija.php" class="crtaNav">Administracija</a></li>
+                    <li><a href="unos.php" id="crtaNav">Unos</a></li>
                   </ul>
             </nav>
         </header>
@@ -66,7 +67,7 @@
                         <div>
                             <input type="text" id="ime" name="ime"/>
                         </div>
-                        <span id="porukaIme"></span>
+                        <span id="porukaIme" class="pogreska"></span>
                     </div>
                     <div>
                         <label>Prezime:</label>
@@ -80,9 +81,9 @@
                         <div>
                             <input type="text" id="korisnickoIme" name="korisnickoIme"/>
                         </div>
-                        <span id="porukaKorisnickoIme"></span>';
+                        <span id="porukaKorisnickoIme" class="pogreska"></span>';
                         if($postojiKorisnickoImeVec = true){
-                            echo '<span>Ime je već zauzeto</span>';
+                            echo '<span class="pogreska">Korisničko ime je već zauzeto</span>';
                         }
                     echo '</div>
                     <div>
@@ -90,14 +91,14 @@
                         <div>
                             <input type="password" id="lozinka" name="lozinka"/>
                         </div>
-                        <span id="porukaLozinka"></span>
+                        <span id="porukaLozinka" class="pogreska"></span>
                     </div>
                     <div>
                         <label>Ponovite Lozinku:</label>
                         <div>
                             <input type="password" id="ponovnaLozinka" name="ponovnaLozinka"/>
                         </div>
-                        <span id="porukaPonovnaLozinka"></span>
+                        <span id="porukaPonovnaLozinka" class="pogreska"></span>
                     </div>
                    
                     <div > 
@@ -113,35 +114,35 @@
                           <div>
                               <input type="text" id="ime" name="ime"/>
                           </div>
-                          <span id="porukaIme"></span>
+                          <span id="porukaIme" class="pogreska"></span>
                       </div>
                       <div>
                           <label>Prezime:</label>
                           <div>
                               <input type="text" id="prezime" name="prezime"/>
                           </div>
-                          <span id="porukaPrezime"></span>
+                          <span id="porukaPrezime" class="pogreska"></span>
                       </div>
                       <div>
                           <label>Korisničko ime:</label>
                           <div>
                               <input type="text" id="korisnickoIme" name="korisnickoIme"/>
                           </div>
-                          <span id="porukaKorisnickoIme"></span>
+                          <span id="porukaKorisnickoIme" class="pogreska"></span>
                       </div>
                       <div>
                           <label>Lozinka:</label>
                           <div>
                               <input type="password" id="lozinka" name="lozinka"/>
                           </div>
-                          <span id="porukaLozinka"></span>
+                          <span id="porukaLozinka" class="pogreska"></span>
                       </div>
                       <div>
                           <label>Ponovite Lozinku:</label>
                           <div>
                               <input type="password" id="ponovnaLozinka" name="ponovnaLozinka"/>
                           </div>
-                          <span id="porukaPonovnaLozinka"></span>
+                          <span id="porukaPonovnaLozinka" class="pogreska"></span>
                       </div>
                      
                       <div > 
@@ -177,28 +178,15 @@
                     document.getElementById('porukaPrezime').innerHTML="Prezime mora sadržavati barem jedan znak";
                     slanjeForme = false;
                   }
-                  if(slanjeForme != true){
-                      event.preventDefault();
-                  }
+                  
                   var okvirKorisnickoIme = document.getElementById("korisnickoIme");
                   var korisnickoIme = document.getElementById("korisnickoIme").value;
                   if(korisnickoIme.length > 0){
                     okvirKorisnickoIme.style.border = "1px solid black";
-                      document.getElementById('porukaPrezime').innerHTML="";
+                      document.getElementById('porukaKorisnickoIme').innerHTML="";
                   }else{
                     okvirKorisnickoIme.style.border = "1px dashed red";
-                    document.getElementById('porukaKorisnickoIme').innerHTML="Prezime mora sadržavati barem jedan znak";
-                    slanjeForme = false;
-                  }
-
-                  var okvirKorisnickoIme = document.getElementById("korisnickoIme");
-                  var korisnickoIme = document.getElementById("korisnickoIme").value;
-                  if(korisnickoIme.length > 0){
-                    okvirKorisnickoIme.style.border = "1px solid black";
-                      document.getElementById('porukaPrezime').innerHTML="";
-                  }else{
-                    okvirKorisnickoIme.style.border = "1px dashed red";
-                    document.getElementById('porukaKorisnickoIme').innerHTML="Prezime mora sadržavati barem jedan znak";
+                    document.getElementById('porukaKorisnickoIme').innerHTML="Korisničko ime mora sadržavati barem jedan znak<br/>";
                     slanjeForme = false;
                   }
 
