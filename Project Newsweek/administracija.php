@@ -27,8 +27,15 @@
                     <li><a href="index.php" class="crtaNav" >Home</a></li>
                     <li><a href="kategorija.php?id=U.S" class="crtaNav">U.S</a></li>
                     <li><a href="kategorija.php?id=World" class="crtaNav">World</a></li>
-                    <li><a href="#" class="crtaNav">Administracija</a></li>
-                    <li><a href="unos.php" id="crtaNav">Unos</a></li>
+                    <?php
+                       if(isset($_SESSION['$username']) && isset($_SESSION['$level'])){
+                        echo '<li><a href="#" class="crtaNav">Administracija</a></li>';
+                        echo '<li><a href="unos.php" id="crtaNav">Unos</a></li>';
+                       } else {
+                        echo '<li><a href="#" class="crtaNav">Login</a></li>';
+                        echo '<li><a href="registracija.php" id="crtaNav">Registracija</a></li>';
+                       }
+                    ?>
                   </ul>
             </nav>
         </header>
@@ -67,15 +74,21 @@
                 $target_dir = 'img/'.$slika; 
                 move_uploaded_file($_FILES["pphoto"]["tmp_name"], $target_dir); 
                 if($slika != NULL){
-                    $query = "UPDATE vijesti SET naslov='$naslov',tekst='$tekst',
-                    slika='$slika',kategorija='$kategorija',arhiva='$arhiva'
+                    $sql="UPDATE vijesti SET naslov=?,tekst=?,slika=?,kategorija=?,arhiva=?
                     WHERE id = $id";
-                    $result = mysqli_query($dbc, $query) or die('Error querying database.');
+                    $stmt=mysqli_stmt_init($dbc);
+                    if (mysqli_stmt_prepare($stmt, $sql)){
+                        mysqli_stmt_bind_param($stmt,'ssssi', $naslov, $tekst, $slika, $kategorija, $arhiva);
+                        mysqli_stmt_execute($stmt);
+                    } 
                 } else{
-                    $query = "UPDATE vijesti SET naslov='$naslov',tekst='$tekst',
-                    kategorija='$kategorija',arhiva='$arhiva'
-                     WHERE id = $id";
-                    $result = mysqli_query($dbc, $query) or die('Error querying database.');
+                    $sql="UPDATE vijesti SET naslov=?,tekst=?,kategorija=?,arhiva=?
+                    WHERE id = $id";
+                    $stmt=mysqli_stmt_init($dbc);
+                    if (mysqli_stmt_prepare($stmt, $sql)){
+                        mysqli_stmt_bind_param($stmt,'sssi', $naslov, $tekst, $kategorija, $arhiva);
+                        mysqli_stmt_execute($stmt);
+                    } 
                 }
             }
                if(isset($_POST['login'])){
